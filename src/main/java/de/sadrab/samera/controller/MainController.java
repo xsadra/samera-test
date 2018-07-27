@@ -43,9 +43,32 @@ public class MainController {
 
             Map<String, String> response = sendGetRequest(request, v1Url, v2Url);
 
-            printResponse(request, response);
+            /// Result for Task 2
+//            printResponse(request, response);
+
+            String stringCompareResult = stringCompare(response);
+
+            /// Result for Task 3
+            printResult(request, stringCompareResult);
+
         });
 
+    }
+
+    private void printResult(String path, String result) {
+        System.out.println(" - For ( " + path + " ) -> " + result);
+    }
+
+    private String stringCompare(Map<String,String> response) {
+
+        if (response.get("v1").contains("ERROR") || response.get("v1").contains("ERROR")) {
+            return "V1 | V2 Has some Error! [ ERROR ]";
+        }
+
+        if (response.get("v1").equals(response.get("v2"))) {
+            return "V1 & V2 Are Equal.";
+        }
+        return "V1 & V2 Are [ NOT ] Equal.";
     }
 
     private void printResponse(String path, Map<String,String> response) {
