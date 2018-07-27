@@ -1,5 +1,6 @@
 package de.sadrab.samera.starter;
 
+import de.sadrab.samera.controller.MainController;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
